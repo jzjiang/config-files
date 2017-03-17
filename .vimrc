@@ -10,6 +10,15 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Solarized
+Plugin 'altercation/vim-colors-solarized'
+
+" Syntastic
+Plugin 'vim-syntastic/syntastic'
+
+" Handlebars syntax highlighting
+Plugin 'mustache/vim-mustache-handlebars'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -24,9 +33,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-" Pathogen
-execute pathogen#infect()
 
 " Colours!
 syntax enable
