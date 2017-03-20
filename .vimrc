@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 
 " Syntastic
-Plugin 'vim-syntastic/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " Handlebars syntax highlighting
 Plugin 'mustache/vim-mustache-handlebars'
@@ -86,3 +86,10 @@ set smartcase                   " Case sensitive when uc present
 
 " Always work out of cwd
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+
+" Easier than typing SyntasticCheck
+nmap <silent> <leader>c :SyntasticCheck<CR>
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_javascript_checkers = [ 'eslint' ]
+autocmd FileType javascript let b:syntastic_javascript_eslint_exec = substitute(system('npm bin'), '\n\+$', '', '') . "/eslint"
+autocmd FileType javascript let b:syntastic_checkers = ['eslint']
